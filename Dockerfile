@@ -1,4 +1,4 @@
 FROM ubuntu:latest
 RUN apt update -y 
-RUN apt install nginx
+RUN apt install nginx -y
 CMD ["bash"]
