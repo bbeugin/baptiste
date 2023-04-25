@@ -1,11 +1,11 @@
 name: build Docker Image
 
 on: 
-    workflow_dispatch:
-      branches: 
-        - main
+  workflow_dispatch:
+    branches: 
+      - main
 env: 
-    DOCKER_PASSWORD: ${{secret.test}} 
+  DOCKER_PASSWORD: ${{secret.test}} 
 
 jobs: 
   build: 
