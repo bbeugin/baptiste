@@ -19,7 +19,7 @@ jobs:
 
     - name: build image
       run: |
-        docker build -t bbeugin/baptiste:latest .
+        docker build -t baptistebeugin/docker:latest .
     - name: Docker push
       run: |
-        docker push bbeugin/baptiste:latest
+        docker push baptistebeugin/docker:latest
