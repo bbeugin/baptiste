@@ -9,17 +9,17 @@ env:
 
 jobs: 
   build: 
-  runs-on: ubuntu-latest
-  steps:
-  - name: Get code
-    uses: actions/checkout@v2
-  - name: docker login
-    run: |
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get code
+      uses: actions/checkout@v2
+    - name: docker login
+      run: |
         docker login -u baptistebeugin -p ${{ secret.test }}
 
-  - name: build image
-    run: |
-      docker build -t bbeugin/baptiste:latest .
-  - name: Docker push
-    run: |
-      docker push bbeugin/baptiste:latest
+    - name: build image
+      run: |
+        docker build -t bbeugin/baptiste:latest .
+    - name: Docker push
+      run: |
+        docker push bbeugin/baptiste:latest
