@@ -5,7 +5,7 @@ on:
     branches: 
       - main
 env: 
-  DOCKER_PASSWORD: ${{secret.test}} 
+  DOCKER_PASSWORD: ${{ secret.test }} 
 
 jobs: 
   build: 
