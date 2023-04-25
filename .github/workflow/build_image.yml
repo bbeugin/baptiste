@@ -1,23 +1,25 @@
----
 name: build Docker Image
-on:
+
+on: 
   workflow_dispatch:
-    branches:
+    branches: 
       - main
-env:
-  DOCKER_PASSWORD: ${{secret.test}}
-jobs:
-  build:
+env: 
+  DOCKER_PASSWORD: ${{secret.test}} 
+
+jobs: 
+  build: 
     runs-on: ubuntu-latest
     steps:
-      - name: Get code
-        uses: actions/checkout@v2
-      - name: docker login
-        run: |
-          docker login -u baptistebeugin -p ${{ secret.test }}
-      - name: build image
-        run: |
-          docker build -t bbeugin/baptiste:latest .
-      - name: Docker push
-        run: |
-          docker push bbeugin/baptiste:latest
+    - name: Get code
+      uses: actions/checkout@v2
+    - name: docker login
+      run: |
+        docker login -u baptistebeugin -p ${{ secret.test }}
+
+    - name: build image
+      run: |
+        docker build -t bbeugin/baptiste:latest .
+    - name: Docker push
+      run: |
+        docker push bbeugin/baptiste:latest
